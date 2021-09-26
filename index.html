@@ -14,54 +14,55 @@
             <button class="button" type="button"><i class="fas fa-ellipsis-v"></i></button>
         </header>
         <div class="main">
-            <div class="form">
-                <input type="text" class="form__input" placeholder="Add notes">
+            <form class="form" data-dom="search-form">
+                <input type="text" class="form__input" placeholder="Add note" data-dom="note">
                 <button class="button form__button"><i class="fas fa-plus"></i></button>
-            </div>
-            <div class="slider">
-                <div class="slider__item">
-                    <label class="label">
-                        <input type="radio"  name="radio" class="radio">
-                        <span class="icon icon_slider"><i class="fas fa-bath"></i></span>
-                        <p class="slider__text">Bath</p>
-                    </label>    
-                </div>
-                <div class="slider__item">
-                    <label class="label">
-                        <input type="radio"  name="radio" class="radio" checked>
-                        <span class="icon icon_slider"><i class="fas fa-cocktail"></i></span>
-                        <p class="slider__text">Cocktail</p>
-                    </label>    
-                </div>
-                <div class="slider__item">
-                    <label class="label">
-                        <input type="radio"  name="radio" class="radio">
-                        <span class="icon icon_slider"><i class="fas fa-bed"></i></span>
-                        <p class="slider__text">Bed</p>
-                    </label>    
-                </div>
-                <div class="slider__item">
-                    <label class="label">
-                        <input type="radio"  name="radio" class="radio">
-                        <span class="icon icon_slider"><i class="fas fa-dumbbell"></i></span>
-                        <p class="slider__text">Train</p>
-                    </label>    
-                </div>
-                <div class="slider__item">
-                    <label class="label">
-                        <input type="radio"  name="radio" class="radio">
-                        <span class="icon icon_slider"><i class="fas fa-shopping-bag"></i></span>
-                        <p class="slider__text">Work</p>
-                    </label>    
+           
+                <div class="slider">
+                    <div class="slider__item">
+                        <label class="label">
+                            <input type="radio"  name="radio" class="radio">
+                            <span class="icon icon_slider"><i class="fas fa-bath"></i></span>
+                            <p class="slider__text">Bath</p>
+                        </label>    
+                    </div>
+                    <div class="slider__item">
+                        <label class="label">
+                            <input type="radio"  name="radio" class="radio" checked>
+                            <span class="icon icon_slider"><i class="fas fa-cocktail"></i></span>
+                            <p class="slider__text">Cocktail</p>
+                        </label>    
+                    </div>
+                    <div class="slider__item">
+                        <label class="label">
+                            <input type="radio"  name="radio" class="radio">
+                            <span class="icon icon_slider"><i class="fas fa-bed"></i></span>
+                            <p class="slider__text">Bed</p>
+                        </label>    
+                    </div>
+                    <div class="slider__item">
+                        <label class="label">
+                            <input type="radio"  name="radio" class="radio">
+                            <span class="icon icon_slider"><i class="fas fa-dumbbell"></i></span>
+                            <p class="slider__text">Train</p>
+                        </label>    
+                    </div>
+                    <div class="slider__item">
+                        <label class="label">
+                            <input type="radio"  name="radio" class="radio">
+                            <span class="icon icon_slider"><i class="fas fa-shopping-bag"></i></span>
+                            <p class="slider__text">Work</p>
+                        </label>    
+                    </div>
                 </div>
                
                 
-            </div>
+            </form>
         </div>
         <div class="tabs">
             <div class="tabs__select">
                 <label class="tabs__item">
-                    <input type="radio" class="tabs__input"  name="tabs__input">
+                    <input type="radio" class="tabs__input"  name="tabs__input" checked>
                     <span class="tabs__title">Today</span>
                 </label>
                 <label class="tabs__item">
@@ -69,7 +70,7 @@
                     <span class="tabs__title">Upcoming</span>
                 </label>
             </div>
-            <div class="tabs__slider">
+            <div class="tabs__slider" data-dom="task-place">
                 <label class="note">
                     <span class="icon icon_note">
                         <i class="fas fa-shopping-bag"></i>
@@ -98,5 +99,6 @@
                
             </div>
         </div>
+        <script src="script.js"></script>
     </body>
 </html>
