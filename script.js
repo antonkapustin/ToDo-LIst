@@ -2,22 +2,24 @@ const newForm = document.querySelector("[data-dom=search-form]");
 
 newForm.addEventListener("submit", (e) => {
     event.preventDefault();
-    const note = document.querySelector("[data-dom=note]");
-    const radioBtn = document.querySelector("[data-dom=radio]:checked"); 
-    let icon = radioBtn.value;   
+    const noteInput = document.querySelector("[data-dom=note-input]");
+    const radioBtn = document.querySelector("[data-dom=radio]:checked");
+
     const newTask = {
-        name: note.value,
-        time:new Date ()
+        name: noteInput.value,
+        time:new Date (),
+        icon: radioBtn.value
     };
-    createNewNote(newTask, icon);
+    createNewNote(newTask);
 })
 
-function createNewNote(newTask, icon){
+function createNewNote(newTask){
     let newTaskLabel = document.createElement("label");
+    let taskSlider = document.querySelector("[data-dom=task-place]");
 
     let task = `   
         <span class="icon icon_note">
-            <i class="fas fa-${icon}"></i>
+            <i class="fas fa-${newTask.icon}"></i>
         </span>    
         <div class="note__content">
             <p class="note__name">${newTask.name}</p>
@@ -27,9 +29,29 @@ function createNewNote(newTask, icon){
             <input type="checkbox" class="note__checkbox">
             <span class="icon icon_note"><i class="fas fa-check-circle"></i></span> `;
 
-newTaskLabel.classList.add("note");
-newTaskLabel.innerHTML = task;
-let taskSlider = document.querySelector("[data-dom=task-place]");
-taskSlider.append(newTaskLabel);
+    newTaskLabel.classList.add("note");
+    newTaskLabel.innerHTML = task;
+    taskSlider.append(newTaskLabel);
 }
+
+
+const icons = [{name:"Bath",icon:"bath"}, {name:"cocktail",icon:"cocktail"}, {name:"bed",icon:"bed"}, {name:"train",icon:"dumbbell"}, {name:"Work",icon:"shopping-bag"}];
+
+
+for(let i=0; i<=icons.length; i++){
+    let slider = document.querySelector("[data-dom=slider]");
+    let newSliderItem = document.createElement("div");
+
+    let sliderItem = ` 
+    <label class="label">
+        <input type="radio"  name="radio" class="radio" value="${icons[i].icon}" data-dom="radio">
+        <span class="icon icon_slider"><i class="fas fa-${icons[i].icon}"></i></span>
+        <p class="slider__text">${icons[i].name}</p>
+    </label>`;
+
+    newSliderItem.classList.add("slider__item");
+    newSliderItem.innerHTML = sliderItem;
+    slider.append(newSliderItem);
+};
+
 
