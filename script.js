@@ -3,18 +3,21 @@ const newForm = document.querySelector("[data-dom=search-form]");
 newForm.addEventListener("submit", (e) => {
     event.preventDefault();
     const note = document.querySelector("[data-dom=note]");
+    const radioBtn = document.querySelector("[data-dom=radio]:checked"); 
+    let icon = radioBtn.value;   
     const newTask = {
         name: note.value,
         time:new Date ()
     };
-    createNewNote(newTask);
+    createNewNote(newTask, icon);
 })
 
-function createNewNote(newTask){
+function createNewNote(newTask, icon){
     let newTaskLabel = document.createElement("label");
+
     let task = `   
         <span class="icon icon_note">
-            <i class="fas fa-shopping-bag"></i>
+            <i class="fas fa-${icon}"></i>
         </span>    
         <div class="note__content">
             <p class="note__name">${newTask.name}</p>
@@ -28,11 +31,5 @@ newTaskLabel.classList.add("note");
 newTaskLabel.innerHTML = task;
 let taskSlider = document.querySelector("[data-dom=task-place]");
 taskSlider.append(newTaskLabel);
-
 }
 
-// const li = document.createElement("li");
-// const textSpan = document.createElement("span");
-// textSpan.classList.add("todo-text");
-// const newTodo = input.value;
-// textSpan.append(newTodo);
