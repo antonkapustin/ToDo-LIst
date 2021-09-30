@@ -3,11 +3,16 @@
     background-color: #fff;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    scroll-snap-align: start;
+    overflow: auto;
+    scroll-behavior: smooth;
+    flex-shrink: 0;
 
 
 
     &__select {
         display: flex;
+        position: relative;
     }
 
     &__item {
@@ -18,17 +23,40 @@
         color:#7aafff;
          
         
-        &:checked {
-            border-bottom: 1px blue solid;
-        }
+        
     }
     &__input {
         appearance: none;
+
+        &:checked {
+            + .tabs__title {
+                color:@color-darkblue
+            }
+                + .tabs__title::after{
+                background-color: @color-darkblue;
+            }
+        
+        }
 
        
     }
 
     &__slider {
         padding: 15px;
+    }
+    &__title {
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: white;
+            border-radius: 3px;
+            z-index: 1;
+            transition: margin .1s ease-out;
+            pointer-events: none;
+        }
     }
 }

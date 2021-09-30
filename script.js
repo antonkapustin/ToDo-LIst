@@ -35,10 +35,10 @@ function createNewNote(newTask){
 }
 
 
-const icons = [{name:"Bath",icon:"bath"}, {name:"cocktail",icon:"cocktail"}, {name:"bed",icon:"bed"}, {name:"train",icon:"dumbbell"}, {name:"Work",icon:"shopping-bag"}];
+const icons = [{name:"Bath",icon:"bath"}, {name:"Cocktail",icon:"cocktail"}, {name:"Bed",icon:"bed"}, {name:"Train",icon:"dumbbell"}, {name:"Work",icon:"shopping-bag"}];
 
 
-for(let i=0; i<=icons.length; i++){
+for(let i=0; i < icons.length; i++){
     let slider = document.querySelector("[data-dom=slider]");
     let newSliderItem = document.createElement("div");
 
