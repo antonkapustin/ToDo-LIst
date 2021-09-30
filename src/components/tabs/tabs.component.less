@@ -3,10 +3,7 @@
     background-color: #fff;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    scroll-snap-align: start;
-    overflow: auto;
-    scroll-behavior: smooth;
-    flex-shrink: 0;
+    
 
 
 
@@ -43,6 +40,12 @@
 
     &__slider {
         padding: 15px;
+        height: 100%;
+        scroll-snap-align: start;
+        overflow: auto;
+        scroll-behavior: smooth;
+        flex-shrink: 0;
+        scroll-snap-type: y mandatory;
     }
     &__title {
         &::after {
