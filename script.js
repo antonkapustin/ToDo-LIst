@@ -25,9 +25,9 @@ function createNewNote(newTask){
             <p class="note__name">${newTask.name}</p>
             <p class="note__discription">Here mut to be tabs discription</p>
         </div>
-        
+
             <input type="checkbox" class="note__checkbox">
-            <span class="icon icon_note"><i class="fas fa-check-circle"></i></span> `;
+            <span class="icon icon_note"><i class="fas fa-check-circle"></i></span>`;
 
     newTaskLabel.classList.add("note");
     newTaskLabel.innerHTML = task;
@@ -38,6 +38,7 @@ function createNewNote(newTask){
 const icons = [{name:"Bath",icon:"bath"}, {name:"Cocktail",icon:"cocktail"}, {name:"Bed",icon:"bed"}, {name:"Train",icon:"dumbbell"}, {name:"Work",icon:"shopping-bag"}];
 
 
+  console.time(icons);
 for(let i=0; i < icons.length; i++){
     let slider = document.querySelector("[data-dom=slider]");
     let newSliderItem = document.createElement("div");
@@ -54,4 +55,4 @@ for(let i=0; i < icons.length; i++){
     slider.append(newSliderItem);
 };
 
-
+console.timeEnd(icons);
