@@ -7,6 +7,8 @@ export const addNoteComponent = {
             return false;
         } else {
             this.newForm = document.querySelector("[data-dom=search-form]");
+            this.noteInput = document.querySelector("[data-dom=note-input]");
+            this.slider = document.querySelector("[data-dom=slider]");
             this.applyEventHandlers();
             this.init = true;
             this.addSliderItems();
@@ -40,11 +42,10 @@ export const addNoteComponent = {
 
     onNewFormSubmit: function(e) {
         e.preventDefault();
-        const noteInput = document.querySelector("[data-dom=note-input]");
         const radioBtn = document.querySelector("[data-dom=radio]:checked");
     
         const newTask = {
-            name: noteInput.value,
+            name: this.noteInput.value,
             time:new Date (),
             icon: radioBtn.value
         };
@@ -60,7 +61,6 @@ export const addNoteComponent = {
 
     addSliderItems: function(){
         this.sliderItems.forEach((item)=> {
-        let slider = document.querySelector("[data-dom=slider]");
         let newSliderItem = document.createElement("div");
     
         let sliderItem = ` 
@@ -72,7 +72,7 @@ export const addNoteComponent = {
 
         newSliderItem.classList.add("slider__item");
         newSliderItem.innerHTML = sliderItem;
-        slider.append(newSliderItem);
+        this.slider.append(newSliderItem);
     })
 }
 }
