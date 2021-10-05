@@ -9,6 +9,7 @@ export const addNoteComponent = {
             this.newForm = document.querySelector("[data-dom=search-form]");
             this.applyEventHandlers();
             this.init = true;
+            this.addSliderItems();
         }
     },
 
@@ -49,5 +50,29 @@ export const addNoteComponent = {
         };
         this.createNewNote(newTask);
         this.newForm.reset();
-    }
+    },
+
+    sliderItems:[{name:"Bath",icon:"bath"},
+    {name:"Cocktail",icon:"cocktail", checked:true},
+    {name:"Bed",icon:"bed"},
+    {name:"Train",icon:"dumbbell"},
+    {name:"Work",icon:"shopping-bag"}],
+
+    addSliderItems: function(){
+        this.sliderItems.forEach((item)=> {
+        let slider = document.querySelector("[data-dom=slider]");
+        let newSliderItem = document.createElement("div");
+    
+        let sliderItem = ` 
+        <label class="label">
+            <input type="radio" class="radio" name="radio"  value="${item.icon}" checked="${item.checked}" data-dom="radio">
+            <span class="icon icon_slider"><i class="fas fa-${item.icon}"></i></span>
+            <p class="slider__text">${item.name}</p>
+        </label>`;
+
+        newSliderItem.classList.add("slider__item");
+        newSliderItem.innerHTML = sliderItem;
+        slider.append(newSliderItem);
+    })
+}
 }
