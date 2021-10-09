@@ -1,5 +1,12 @@
 export const addNoteComponent = {
     newForm: undefined,
+    noteInput:undefined,
+    slider:undefined,
+    sliderItems:[{name:"Bath",icon:"bath"},
+    {name:"Cocktail",icon:"cocktail", checked:"checked"},
+    {name:"Bed",icon:"bed"},
+    {name:"Train",icon:"dumbbell"},
+    {name:"Work",icon:"shopping-bag"}],
     inited: false,
 
     inited: function () {
@@ -25,7 +32,7 @@ export const addNoteComponent = {
         </span>
         <div class="note__content">
             <p class="note__name">${newTask.name}</p>
-            <p class="note__discription">Here mut to be tabs discription</p>
+            <p class="note__discription">${newTask.about || " "}</p>
         </div>
 
             <input type="checkbox" class="note__checkbox">
@@ -53,11 +60,7 @@ export const addNoteComponent = {
         this.newForm.reset();
     },
 
-    sliderItems:[{name:"Bath",icon:"bath"},
-    {name:"Cocktail",icon:"cocktail", checked:true},
-    {name:"Bed",icon:"bed"},
-    {name:"Train",icon:"dumbbell"},
-    {name:"Work",icon:"shopping-bag"}],
+
 
     addSliderItems: function(){
         this.sliderItems.forEach((item)=> {
@@ -65,7 +68,7 @@ export const addNoteComponent = {
     
         let sliderItem = ` 
         <label class="label">
-            <input type="radio" class="radio" name="radio"  value="${item.icon}" checked="${item.checked}" data-dom="radio">
+            <input type="radio" class="radio" name="radio"  value="${item.icon}" ${item.checked || " "} data-dom="radio">
             <span class="icon icon_slider"><i class="fas fa-${item.icon}"></i></span>
             <p class="slider__text">${item.name}</p>
         </label>`;
