@@ -16,9 +16,9 @@ export const addNoteComponent = {
             this.newForm = document.querySelector("[data-dom=search-form]");
             this.noteInput = document.querySelector("[data-dom=note-input]");
             this.slider = document.querySelector("[data-dom=slider]");
+            this.addSliderItems();
             this.applyEventHandlers();
             this.init = true;
-            this.addSliderItems();
         }
     },
 
@@ -42,6 +42,35 @@ export const addNoteComponent = {
     newTaskLabel.innerHTML = task;
     taskSlider.append(newTaskLabel);
     },
+
+    populateNotesFromArray: function (data) {
+        const taskSlider = document.querySelector("[data-dom=task-place]");
+        const fragment = document.createDocumentFragment();
+
+        // renderToDom(data, 'some tempalte')
+
+        //let i = data.length;
+        let element;
+
+        for(let i=0; i<data.length; i++){
+          element = document.createElement("label");
+          element.className = "note";
+          const task = `
+          <span class="icon icon_note">
+              <i class="fas fa-${data[i].icon}"></i>
+          </span>
+          <div class="note__content">
+              <p class="note__name">${data[i].name}</p>
+              <p class="note__discription">${data[i].about || ""}</p>
+          </div>
+
+              <input type="checkbox" class="note__checkbox">
+              <span class="icon icon_note"><i class="fas fa-check-circle"></i></span>`;
+          element.innerHTML = task;
+          fragment.appendChild(element);
+        }
+        taskSlider.appendChild(fragment);
+      },
 
     applyEventHandlers: function() {
         this.newForm.addEventListener("submit", this.onNewFormSubmit.bind(this))

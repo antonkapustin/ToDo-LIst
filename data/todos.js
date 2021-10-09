@@ -1,83 +1,73 @@
 export const todos = [
     {
-      id: "61601c7907b7314b44a87694",
-      name: "Rivas Newman",
-      time: "2021-05-19T06:28:38 -03:00",
-      about:
-        "Exercitation laboris eu ut sunt irure incididunt quis esse deserunt sunt mollit commodo laboris. Aliqua do eiusmod dolore elit elit et amet officia cillum incididunt nulla. Culpa id nisi aute elit in laborum enim. In qui mollit anim dolor velit. Aliqua anim dolor esse in cupidatat laboris labore occaecat dolore.\r\n",
-      icon: "cocktail",
+      "_id": "616176274aba59da03c275d9",
+      "name": "Guthrie Johnston",
+      "about": "Magna veniam do aute aute. Ipsum in ipsum nulla sunt labore ipsum incididunt ea exercitation. Eiusmod id ad duis officia adipisicing dolore ipsum consequat adipisicing. Sint culpa magna ex laboris ex commodo pariatur id reprehenderit consequat esse. Velit veniam labore reprehenderit ex esse Lorem occaecat excepteur laborum quis veniam.\r\n",
+      "time": "2020-11-08T05:51:46 -03:00",
+      "icon": "cocktail"
     },
     {
-      id: "61601c79467c25d66b692aec",
-      name: "Jillian Powell",
-      time: "2017-09-12T01:55:27 -03:00",
-      about:
-        "Velit dolor ullamco cupidatat mollit. Occaecat deserunt proident proident nisi excepteur pariatur consequat duis. Quis proident culpa quis consectetur nostrud veniam. Dolor sint quis fugiat incididunt. Ut do ullamco proident tempor. In nisi cupidatat aute laboris eu et culpa. Esse Lorem et ad esse esse sunt consectetur.\r\n",
-      icon: "shopping-bag",
+      "_id": "61617627c7b7c78956f956df",
+      "name": "Dejesus Mills",
+      "about": "Adipisicing enim adipisicing duis amet. Tempor Lorem irure eiusmod occaecat amet. Eiusmod aute consectetur ut anim veniam laborum. Tempor et tempor ut quis laboris. Quis incididunt eiusmod sint tempor do ut dolore. Sunt veniam sint sit veniam culpa.\r\n",
+      "time": "2017-11-30T07:12:13 -03:00",
+      "icon": "dumbbell"
     },
     {
-      id: "61601c7944454c5d4e2d8158",
-      name: "Marci Berry",
-      time: "2017-12-23T01:21:56 -03:00",
-      about:
-        "Lorem ullamco commodo mollit enim ipsum et dolore voluptate dolore dolor deserunt ad amet. Duis commodo esse elit sint amet amet. Qui ut et fugiat est dolor dolor cupidatat sit cillum proident mollit pariatur. Dolore aliquip ad occaecat consequat est elit ea incididunt.\r\n",
-      icon: "cocktail",
+      "_id": "61617627a1d3e94bae642e8e",
+      "name": "Gray Sherman",
+      "about": "Minim irure eiusmod velit ad labore ea aute ea et ullamco sint nulla officia. Ullamco Lorem et dolor et. Laboris ipsum deserunt sint eu et excepteur consequat id occaecat dolor. Id id id proident aliquip ullamco fugiat aute ut consequat cupidatat id. Exercitation enim voluptate fugiat mollit adipisicing nulla fugiat ut laborum sint magna nisi. Deserunt sit eu excepteur incididunt qui. Occaecat aliquip commodo ut adipisicing in.\r\n",
+      "time": "2016-04-06T08:23:15 -03:00",
+      "icon": "cocktail"
     },
     {
-      id: "61601c796bcf6ce0b012de6c",
-      name: "James Hale",
-      time: "2019-02-21T10:07:24 -03:00",
-      about:
-        "Labore fugiat velit excepteur culpa ad. Sit ut Lorem nisi irure aliquip. Laboris ullamco pariatur esse deserunt reprehenderit ex in deserunt voluptate Lorem nostrud. Duis eiusmod anim voluptate nisi minim aliquip aliquip sint magna sit duis eu laboris. Laboris ipsum incididunt nulla tempor excepteur voluptate minim occaecat id dolore et esse sint voluptate.\r\n",
-      icon: "bed",
+      "_id": "616176274b4b120f546cfd07",
+      "name": "Kelley Valencia",
+      "about": "Non labore consectetur culpa cillum adipisicing ex nisi irure. Ullamco officia voluptate duis officia ullamco duis id ipsum culpa sit. Fugiat pariatur aliquip non ea dolor in sint minim laborum aute sit.\r\n",
+      "time": "2014-03-01T08:39:56 -03:00",
+      "icon": "bed"
     },
     {
-      id: "61601c79c26423350a1be3f9",
-      name: "Simmons Bradley",
-      time: "2018-03-01T08:03:46 -03:00",
-      about:
-        "Consequat labore minim non eiusmod sint. Ex sint nostrud anim enim ut duis. Quis consectetur sunt id aute nostrud. Sit deserunt fugiat ea adipisicing enim.\r\n",
-      icon: "dumbbell",
+      "_id": "6161762758a6a3e0ff891a3d",
+      "name": "Noreen Langley",
+      "about": "Aliquip occaecat ea ad ullamco laboris velit cillum culpa incididunt cupidatat exercitation. Do fugiat ullamco dolore ut. Voluptate aute culpa id in magna non. Eiusmod irure do est aliquip exercitation labore voluptate nostrud anim magna voluptate anim eiusmod. Nulla amet duis culpa aliqua dolore sunt mollit labore. Do nulla est excepteur veniam adipisicing id dolor aliquip fugiat nisi exercitation deserunt.\r\n",
+      "time": "2016-02-10T10:04:46 -03:00",
+      "icon": "cocktail"
     },
     {
-      id: "61601c79c6f696bb7a6100ad",
-      name: "Frazier Jackson",
-      time: "2015-10-12T04:18:33 -03:00",
-      about:
-        "Commodo ullamco culpa do id deserunt excepteur sint. Esse labore cupidatat eiusmod velit officia duis id est aliquip in aliquip eiusmod aliquip ipsum. Sit nostrud adipisicing cillum laborum proident pariatur eiusmod voluptate aliquip excepteur exercitation adipisicing cupidatat.\r\n",
-      icon: "dumbbell",
+      "_id": "6161762748010d0c0fd5df0d",
+      "name": "Patrice Randall",
+      "about": "Ut magna sit occaecat nostrud ut reprehenderit aliqua eiusmod elit veniam fugiat adipisicing culpa minim. Ut eu incididunt cillum veniam irure excepteur est consectetur dolor aute minim. Id consectetur esse exercitation ex aliqua velit nisi enim consequat do in in. Ea anim quis tempor occaecat nostrud deserunt esse dolor incididunt magna. Deserunt ea et aliqua in enim voluptate veniam sit cillum qui commodo laboris aliquip. Ipsum aliqua voluptate non duis. Sunt ipsum voluptate excepteur non ipsum sunt ullamco.\r\n",
+      "time": "2017-02-12T08:34:47 -03:00",
+      "icon": "bed"
     },
     {
-      id: "61601c79ebcc163ee577b856",
-      name: "Anderson Stokes",
-      time: "2014-04-25T02:41:55 -03:00",
-      about:
-        "Aute pariatur anim deserunt ea dolore labore anim velit dolor ut ipsum quis incididunt velit. Adipisicing aliquip aute quis ad nostrud est incididunt esse aliquip elit duis. Amet eu amet in anim proident excepteur occaecat culpa enim ea aliquip velit cupidatat. Sint incididunt laboris fugiat quis nisi. Amet nisi id culpa velit irure commodo eiusmod aliquip. Adipisicing sunt eiusmod consequat mollit excepteur cupidatat velit cillum occaecat nisi quis proident incididunt dolor.\r\n",
-      icon: "dumbbell",
+      "_id": "616176278c51a55d71a2157b",
+      "name": "Gallagher Weber",
+      "about": "Eiusmod in amet mollit dolor mollit minim nisi est non adipisicing dolore ad laborum amet. Velit magna amet elit ex consectetur consequat ad ut et. Est incididunt quis fugiat velit nulla. Quis tempor velit eiusmod anim mollit aute amet.\r\n",
+      "time": "2020-10-04T08:11:08 -03:00",
+      "icon": "dumbbell"
     },
     {
-      id: "61601c79e11e59f3cd541c64",
-      name: "Coleen Ortega",
-      time: "2020-08-06T02:14:31 -03:00",
-      about:
-        "Ullamco voluptate culpa commodo pariatur consectetur id dolor amet. Quis tempor magna et ex id fugiat. Incididunt irure nostrud sit eiusmod irure esse magna esse sint cupidatat voluptate elit. Proident qui aliqua veniam non reprehenderit mollit amet ea quis. Eu Lorem ipsum cupidatat velit proident sint non irure. Officia nostrud nulla sint voluptate sunt nulla nisi ullamco adipisicing aute.\r\n",
-      icon: "dumbbell",
+      "_id": "61617627a2befde4ce4a0c22",
+      "name": "Fletcher Winters",
+      "about": "Pariatur reprehenderit exercitation voluptate do et laboris voluptate irure. Ad eiusmod consectetur elit proident anim incididunt ex ad sit aliquip et nisi. Ullamco consectetur dolor quis nisi velit et velit duis quis excepteur elit adipisicing id. Enim consequat elit pariatur magna officia incididunt ullamco est elit nisi deserunt labore.\r\n",
+      "time": "2021-03-08T11:46:41 -03:00",
+      "icon": "dumbbell"
     },
     {
-      id: "61601c79d4a90bbaca5c2cf9",
-      name: "Rachel Leach",
-      time: "2016-04-21T09:11:04 -03:00",
-      about:
-        "Nulla voluptate non do incididunt. Do velit aliquip reprehenderit nostrud consectetur occaecat nulla nisi voluptate eiusmod. Non id labore et consectetur deserunt sunt. Commodo aliquip sint deserunt ipsum do ullamco dolore veniam veniam magna deserunt. Ut esse sint velit eiusmod id do labore magna Lorem dolor non cupidatat. Esse proident irure in in proident.\r\n",
-      icon: "bath",
+      "_id": "616176275fdadb1ad691fc4e",
+      "name": "Conner Rivera",
+      "about": "Nostrud laborum ad irure magna eu pariatur enim velit velit sit. Id nulla fugiat nisi ex mollit consectetur nulla culpa elit sunt sint veniam cupidatat. Commodo ex ex culpa tempor fugiat sunt proident et minim. Non qui laboris aliquip minim do pariatur mollit cupidatat ad aliquip tempor do cupidatat mollit.\r\n",
+      "time": "2020-10-31T02:01:46 -03:00",
+      "icon": "bed"
     },
     {
-      id: "61601c79e7e2baf142fea208",
-      name: "Miranda Bates",
-      time: "2019-07-01T07:51:36 -03:00",
-      about:
-        "Nulla aliqua nostrud elit ut officia. Consectetur minim anim cupidatat sint laborum sit cupidatat non dolor ipsum ut. Veniam nulla id mollit duis excepteur sunt occaecat.\r\n",
-      icon: "bath",
-    },
-  ];
+      "_id": "61617627bc73679f8f6f96a9",
+      "name": "Cathleen Rojas",
+      "about": "Ut aute nulla et officia ut nulla aute nisi. Anim anim culpa laborum dolore dolor duis ipsum proident non sint. Laboris ipsum laboris velit sint reprehenderit laborum aute commodo occaecat. Sint esse consectetur ipsum nulla.\r\n",
+      "time": "2014-06-05T10:28:39 -03:00",
+      "icon": "bath"
+    }
+  ]
   
