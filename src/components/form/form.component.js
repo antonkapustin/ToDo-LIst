@@ -1,3 +1,5 @@
+import {renderToDom} from "../../../utils/render-to-dom.js";
+
 export const addNoteComponent = {
     newForm: undefined,
     noteInput:undefined,
@@ -45,31 +47,20 @@ export const addNoteComponent = {
 
     populateNotesFromArray: function (data) {
         const taskSlider = document.querySelector("[data-dom=task-place]");
-        const fragment = document.createDocumentFragment();
 
-        // renderToDom(data, 'some tempalte')
-
-        //let i = data.length;
-        let element;
-
-        for(let i=0; i<data.length; i++){
-          element = document.createElement("label");
-          element.className = "note";
-          const task = `
-          <span class="icon icon_note">
-              <i class="fas fa-${data[i].icon}"></i>
-          </span>
-          <div class="note__content">
-              <p class="note__name">${data[i].name}</p>
-              <p class="note__discription">${data[i].about || ""}</p>
-          </div>
-
-              <input type="checkbox" class="note__checkbox">
-              <span class="icon icon_note"><i class="fas fa-check-circle"></i></span>`;
-          element.innerHTML = task;
-          fragment.appendChild(element);
-        }
-        taskSlider.appendChild(fragment);
+        taskSlider.appendChild( renderToDom(data , 
+            `<label class="note">
+                <span class="icon icon_note">
+                    <i class="fas fa-data.icon"></i>
+                </span>
+                <div class="note__content">
+                    <p class="note__name">data.name</p>
+                    <p class="note__discription">data.about</p>
+                </div>
+    
+                <input type="checkbox" class="note__checkbox">
+                <span class="icon icon_note"><i class="fas fa-check-circle"></i></span>
+            </label>`));
       },
 
     applyEventHandlers: function() {
