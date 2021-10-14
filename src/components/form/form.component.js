@@ -2,10 +2,8 @@ import {renderToDom} from "../../../utils/render-to-dom.js";
 
 export const addNoteComponent = {
     newForm: undefined,
-    noteInput:undefined,
-    slider:undefined,
     sliderItems:[{name:"Bath",icon:"bath"},
-    {name:"Cocktail",icon:"cocktail", checked:"checked"},
+    {name:"Cocktail",icon:"cocktail"},
     {name:"Bed",icon:"bed"},
     {name:"Train",icon:"dumbbell"},
     {name:"Work",icon:"shopping-bag"}],
@@ -18,10 +16,23 @@ export const addNoteComponent = {
             this.newForm = document.querySelector("[data-dom=search-form]");
             this.noteInput = document.querySelector("[data-dom=note-input]");
             this.slider = document.querySelector("[data-dom=slider]");
-            this.addSliderItems();
+            this.addSliderItems(this.sliderItems);
             this.applyEventHandlers();
             this.init = true;
         }
+    },
+
+    onNewFormSubmit: function(e) {
+        e.preventDefault();
+        const radioBtn = document.querySelector("[data-dom=radio]:checked");
+    
+        const newTask = {
+            name: this.noteInput.value,
+            time:new Date (),
+            icon: radioBtn.value
+        };
+        this.createNewNote(newTask);
+        this.newForm.reset();
     },
 
     createNewNote: function(newTask) {
@@ -67,35 +78,26 @@ export const addNoteComponent = {
         this.newForm.addEventListener("submit", this.onNewFormSubmit.bind(this))
     },
 
-    onNewFormSubmit: function(e) {
-        e.preventDefault();
-        const radioBtn = document.querySelector("[data-dom=radio]:checked");
+    addSliderItems: function(data){
+        // let newSliderItem = document.createElement("div");
     
-        const newTask = {
-            name: this.noteInput.value,
-            time:new Date (),
-            icon: radioBtn.value
-        };
-        this.createNewNote(newTask);
-        this.newForm.reset();
-    },
+        // let sliderItem = ` 
+        // <label class="label">
+        //     <input type="radio" class="radio" name="radio"  value="${data.icon}" ${data.checked || " "} data-dom="radio">
+        //     <span class="icon icon_slider"><i class="fas fa-${data.icon}"></i></span>
+        //     <p class="slider__text">${data.name}</p>
+        // </label>`;
 
+        // newSliderItem.classList.add("slider__item");
+        // newSliderItem.innerHTML = sliderItem;
 
-
-    addSliderItems: function(){
-        this.sliderItems.forEach((item)=> {
-        let newSliderItem = document.createElement("div");
-    
-        let sliderItem = ` 
-        <label class="label">
-            <input type="radio" class="radio" name="radio"  value="${item.icon}" ${item.checked || " "} data-dom="radio">
-            <span class="icon icon_slider"><i class="fas fa-${item.icon}"></i></span>
-            <p class="slider__text">${item.name}</p>
-        </label>`;
-
-        newSliderItem.classList.add("slider__item");
-        newSliderItem.innerHTML = sliderItem;
-        this.slider.append(newSliderItem);
-    })
-}
+        this.slider.appendChild(renderToDom(data, 
+            `<div class="slider__item">
+                <label class="label">
+                    <input type="radio" class="radio" name="radio"  value="data.icon" data-dom="radio">
+                    <span class="icon icon_slider"><i class="fas fa-data.icon "></i></span>
+                    <p class="slider__text">data.name</p>
+                </label>
+            </div>`));
+    }
 }

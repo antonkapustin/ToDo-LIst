@@ -9,21 +9,20 @@ export const renderToDom = function (dataArray, template) {
     // 3. return fragment
 
     // your code should goes here
-
     let element;
 
     for(let i=0; i<dataArray.length; i++) {
       element = document.createElement("div");
-      let keyIcon = /data.icon/;
+      let keyIcon = /data.icon/igm;
       let resultIcon = template.replace(keyIcon, `${dataArray[i].icon}`);
-      let keyName = /data.name/;
+      let keyName = /data.name/igm;
       let resultName = resultIcon.replace(keyName, `${dataArray[i].name}`);
-      let keyAbout = /data.about/;
-      let resultAbout = resultName.replace(keyAbout, `${dataArray[i].about || "" }`);;
+      let keyAbout = /data.about/igm;
+      let resultAbout = resultName.replace(keyAbout, `${dataArray[i].about || "" }`);
       element.innerHTML = resultAbout;
       fragment.appendChild(element);
     };
+    console.log(element);
 
-console.log(fragment);
     return fragment;
   };
