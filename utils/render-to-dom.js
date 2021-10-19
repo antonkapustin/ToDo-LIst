@@ -1,4 +1,4 @@
-export const renderToDom = function (dataArray, template) {
+export const renderToDom = function (dataArray, template, where) {
     const fragment = document.createDocumentFragment();
 
     // template example
@@ -9,20 +9,101 @@ export const renderToDom = function (dataArray, template) {
     // 3. return fragment
 
     // your code should goes here
-    let element;
+    console.clear();
 
-    for(let i=0; i<dataArray.length; i++) {
-      element = document.createElement("div");
-      let keyIcon = /data.icon/igm;
-      let resultIcon = template.replace(keyIcon, `${dataArray[i].icon}`);
-      let keyName = /data.name/igm;
-      let resultName = resultIcon.replace(keyName, `${dataArray[i].name}`);
-      let keyAbout = /data.about/igm;
-      let resultAbout = resultName.replace(keyAbout, `${dataArray[i].about || "" }`);
-      element.innerHTML = resultAbout;
-      fragment.appendChild(element);
+    const renderToTheDom = (data, template) => {
+      // TODO: increase formula
+      // let matchMarkers = template.match(/{{[\w.[\]]+}}/g);
+    
+      let matchMarkers = template.match(/{{.+?}}/gi);
+    
+      // let matchKeys = template.match(/[^{{]+[^}]}/g);
+      let matchKeys = template.match(/(?<={{).+?(?=}})/gi);
+    
+      // TODO: increase formula to remove next line
+      // matchKeys = matchKeys.map((item) => item.slice(0, -1));
+    
+      let result = template;
+    
+      matchMarkers.forEach((element, i) => {
+        // TODO: increase method to have possebility replace situtations like:
+        // {{parents[0]}}
+        // {{address.town}}
+        // {{notes[0].text}}
+    
+        if (data[matchKeys[i]] === undefined) {
+          let a = matchKeys[i];
+          let b = 
+          console.log(a);
+          console.log(b);
+    
+          result = result.replace(element, a);
+        }
+    
+        result = result.replace(element, data[matchKeys[i]]);
+      });
+    
+      // NOTE: make sure that lengths of `matchMarkers` and `matchKeys` are equals
+      console.log(matchMarkers);
+      console.log(matchKeys);
+      console.log(result);
+    
+      return result;
     };
-    console.log(element);
+    
+    renderToTheDom(
+      {
+        firstName: "Alex",
+        secondName: "Green",
+        email: "alex.green@mail.com",
+        age: 14,
+        phoneNumber: "+123-456-789",
+        parents: ["John Smith"],
+        address: {
+          town: "Grodno",
+          postalcode: "230034"
+        },
+        notes: [
+          {
+            text: "unemployed since 2020",
+            date: new Date()
+          },
+          {
+            text: "got married in 2019",
+            date: new Date()
+          }
+        ]
+      },
+      `<div class="user">
+        <p class="name">{{firstName}} <{{email}}></p>
+        <p class="username">{{firstName}} {{secondName}} is {{age}} years old.</p>
+        <p class="phone">Phone: {{phoneNumber}}</p>
+        <p class="parents">Parents: {{parents[0]}}</p>
+        <p class="address">Address: {{address.town}}</p>
+        <p class="notes">Notes:</p>
+        <p class="notes">- {{notes[0].text}}</p>
+        <p class="notes">- {{notes[1].text}}</p>
+        <p class="text">Should not be escaped {{}} {{ }} {{  }}
+      </div>`
+    );
+    
+    // You should get this result in the end.
+    // lengths of matches array is 10
+    /*
+    `<div class="user">
+        <p class="name">Alex <alex.green@mail.com></p>
+        <p class="username">Alex Green is 14 years old.</p>
+        <p class="phone">Phone: +123-456-789</p>
+        <p class="parents">Parents: John Smith</p>
+        <p class="address">Address: Grodno</p>
+        <p class="notes">Notes:</p>
+        <p class="notes">- unemployed since 2020</p>
+        <p class="notes">- got married in 2019</p>
+    
+        <p class="text">Should not be escaped {{}} {{ }} {{  }}
+      </div>`;
+    */
+    
 
     return fragment;
   };

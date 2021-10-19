@@ -59,19 +59,19 @@ export const addNoteComponent = {
     populateNotesFromArray: function (data) {
         const taskSlider = document.querySelector("[data-dom=task-place]");
 
-        taskSlider.appendChild( renderToDom(data , 
-            `<label class="note">
-                <span class="icon icon_note">
-                    <i class="fas fa-data.icon"></i>
-                </span>
-                <div class="note__content">
-                    <p class="note__name">data.name</p>
-                    <p class="note__discription">data.about</p>
-                </div>
+        // taskSlider.appendChild( renderToDom(data , 
+        //     `<label class="note">
+        //         <span class="icon icon_note">
+        //             <i class="fas fa-data.icon"></i>
+        //         </span>
+        //         <div class="note__content">
+        //             <p class="note__name">data.name</p>
+        //             <p class="note__discription">data.about</p>
+        //         </div>
     
-                <input type="checkbox" class="note__checkbox">
-                <span class="icon icon_note"><i class="fas fa-check-circle"></i></span>
-            </label>`));
+        //         <input type="checkbox" class="note__checkbox">
+        //         <span class="icon icon_note"><i class="fas fa-check-circle"></i></span>
+        //     </label>`));
       },
 
     applyEventHandlers: function() {
