@@ -91,13 +91,13 @@ export const addNoteComponent = {
         // newSliderItem.classList.add("slider__item");
         // newSliderItem.innerHTML = sliderItem;
 
-        this.slider.appendChild(renderToDom(data, 
-            `<div class="slider__item">
-                <label class="label">
-                    <input type="radio" class="radio" name="radio"  value="data.icon" data-dom="radio">
-                    <span class="icon icon_slider"><i class="fas fa-data.icon "></i></span>
-                    <p class="slider__text">data.name</p>
-                </label>
-            </div>`));
+        // this.slider.appendChild(renderToTheDom(data, 
+        //     `<div class="slider__item">
+        //         <label class="label">
+        //             <input type="radio" class="radio" name="radio"  value="data.icon" data-dom="radio">
+        //             <span class="icon icon_slider"><i class="fas fa-data.icon "></i></span>
+        //             <p class="slider__text">data.name</p>
+        //         </label>
+        //     </div>`));
     }
 }

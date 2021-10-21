@@ -1,6 +1,3 @@
-export const renderToDom = function (dataArray, template, where) {
-    const fragment = document.createDocumentFragment();
-
     // template example
     // '<div class="title">{{name}}{{title}}</div>'
 
@@ -9,49 +6,73 @@ export const renderToDom = function (dataArray, template, where) {
     // 3. return fragment
 
     // your code should goes here
-    console.clear();
 
-    const renderToTheDom = (data, template) => {
+   export const renderToDom = (data, template) => {
       // TODO: increase formula
       // let matchMarkers = template.match(/{{[\w.[\]]+}}/g);
-    
+
       let matchMarkers = template.match(/{{.+?}}/gi);
-    
+
       // let matchKeys = template.match(/[^{{]+[^}]}/g);
       let matchKeys = template.match(/(?<={{).+?(?=}})/gi);
-    
+
       // TODO: increase formula to remove next line
       // matchKeys = matchKeys.map((item) => item.slice(0, -1));
-    
+
       let result = template;
-    
-      matchMarkers.forEach((element, i) => {
-        // TODO: increase method to have possebility replace situtations like:
-        // {{parents[0]}}
-        // {{address.town}}
-        // {{notes[0].text}}
-    
-        if (data[matchKeys[i]] === undefined) {
-          let a = matchKeys[i];
-          let b = 
-          console.log(a);
-          console.log(b);
-    
-          result = result.replace(element, a);
+
+     
+      let hard = [];
+
+   
+
+    //   matchMarkers.forEach((element, i) => {
+    //     // TODO: increase method to have possebility replace situtations like:
+    //     // {{parents[0]}}
+    //     // {{address.town}}
+    //     // {{notes[0].text}}
+        
+    //     if(data[matchKeys[i]] === undefined){
+    //         hard.push(matchKeys[i]);
+    //         // // hard.forEach((element, i)=>{
+    //         // //     result = result.replace(element, data.hard[i]);
+    //         // })
+
+    //     }
+
+    //     result = result.replace(element, data[matchKeys[i]]);
+    //   });
+
+    //   let res = hard.reduce((total, amount, index)=>{
+    //     amount.hard[index].forEach((element, i)=>{
+    //         result = result.replace(element, data.matchKeys[i])
+    //     })
+    // });
+
+    let res = matchMarkers.reduce((total, amount, i)=>{
+        if(data[matchKeys[i]] === undefined){
+            let a = matchKeys[i].forEach((item)=>{
+                return item
+            })
+            console.log(a);
+
         }
-    
-        result = result.replace(element, data[matchKeys[i]]);
-      });
-    
+// console.log(data[matchKeys[i]]);
+        return total = result.replace(amount, data[matchKeys[i]]);
+    })
+
       // NOTE: make sure that lengths of `matchMarkers` and `matchKeys` are equals
       console.log(matchMarkers);
       console.log(matchKeys);
-      console.log(result);
-    
+    //   console.log(result);
+      console.log(res);
+    //   console.log(hard);
+
+
       return result;
     };
-    
-    renderToTheDom(
+
+    renderToDom(
       {
         firstName: "Alex",
         secondName: "Green",
@@ -103,7 +124,3 @@ export const renderToDom = function (dataArray, template, where) {
         <p class="text">Should not be escaped {{}} {{ }} {{  }}
       </div>`;
     */
-    
-
-    return fragment;
-  };
