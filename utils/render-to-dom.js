@@ -34,8 +34,9 @@
         // {{notes[0].text}}
 
         if(data[matchKeys[i]] === {}){
-            let a = matchKeys[i];
-            console.log(a);
+            data[matchKeys[i]].forEach(()=>{
+                
+            })
         }
 
         result = result.replace(element, data[matchKeys[i]]);
