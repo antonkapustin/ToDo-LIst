@@ -14,59 +14,40 @@
       let matchMarkers = template.match(/{{.+?}}/gi);
 
       // let matchKeys = template.match(/[^{{]+[^}]}/g);
-      let matchKeys = template.match(/(?<={{).+?(?=}})/gi);
+      let matchKeys = template.match(/(?<={{).+?(?=}}|\[|\.)/gi);
+
+      let valuesForObject = template.match(/(?<=\.).+?(?=}})/gi);
 
       // TODO: increase formula to remove next line
       // matchKeys = matchKeys.map((item) => item.slice(0, -1));
 
       let result = template;
 
-     
-      let hard = [];
 
-   
 
-    //   matchMarkers.forEach((element, i) => {
-    //     // TODO: increase method to have possebility replace situtations like:
-    //     // {{parents[0]}}
-    //     // {{address.town}}
-    //     // {{notes[0].text}}
-        
-    //     if(data[matchKeys[i]] === undefined){
-    //         hard.push(matchKeys[i]);
-    //         // // hard.forEach((element, i)=>{
-    //         // //     result = result.replace(element, data.hard[i]);
-    //         // })
 
-    //     }
 
-    //     result = result.replace(element, data[matchKeys[i]]);
-    //   });
+      matchMarkers.forEach((element, i) => {
+        // TODO: increase method to have possebility replace situtations like:
+        // {{parents[0]}}
+        // {{address.town}}
+        // {{notes[0].text}}
 
-    //   let res = hard.reduce((total, amount, index)=>{
-    //     amount.hard[index].forEach((element, i)=>{
-    //         result = result.replace(element, data.matchKeys[i])
-    //     })
-    // });
-
-    let res = matchMarkers.reduce((total, amount, i)=>{
-        if(data[matchKeys[i]] === undefined){
-            let a = matchKeys[i].forEach((item)=>{
-                return item
-            })
+        if(data[matchKeys[i]] === {}){
+            let a = matchKeys[i];
             console.log(a);
-
         }
-// console.log(data[matchKeys[i]]);
-        return total = result.replace(amount, data[matchKeys[i]]);
-    })
+
+        result = result.replace(element, data[matchKeys[i]]);
+
+      });
+
 
       // NOTE: make sure that lengths of `matchMarkers` and `matchKeys` are equals
       console.log(matchMarkers);
       console.log(matchKeys);
-    //   console.log(result);
-      console.log(res);
-    //   console.log(hard);
+      console.log(valuesForObject);
+      console.log(result);
 
 
       return result;
