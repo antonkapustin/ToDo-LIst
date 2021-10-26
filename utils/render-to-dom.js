@@ -8,36 +8,25 @@
     // your code should goes here
 
    export const renderToDom = (data, template) => {
-      // TODO: increase formula
-      // let matchMarkers = template.match(/{{[\w.[\]]+}}/g);
 
-      let matchMarkers = template.match(/{{.+?}}/gi);
+      let matchMarkers = template.match(/{{\w.+?}}/gi);
 
-      // let matchKeys = template.match(/[^{{]+[^}]}/g);
-      let matchKeys = template.match(/(?<={{).+?(?=}}|\[|\.)/gi);
+      let matchKeys = template.match(/(?<={{)\w.+?(?=}})/gi);
 
-      let valuesForObject = template.match(/(?<=\.).+?(?=}})/gi);
+      let keys = matchKeys.map((element)=>{
+        element = element.replace("[",".").replace("]", "");
+        return element.split(".");
 
-      // TODO: increase formula to remove next line
-      // matchKeys = matchKeys.map((item) => item.slice(0, -1));
+      })
 
+      console.log(keys);
       let result = template;
-
-
-
-
 
       matchMarkers.forEach((element, i) => {
         // TODO: increase method to have possebility replace situtations like:
         // {{parents[0]}}
         // {{address.town}}
         // {{notes[0].text}}
-
-        if(data[matchKeys[i]] === {}){
-            data[matchKeys[i]].forEach(()=>{
-                
-            })
-        }
 
         result = result.replace(element, data[matchKeys[i]]);
 
@@ -47,7 +36,6 @@
       // NOTE: make sure that lengths of `matchMarkers` and `matchKeys` are equals
       console.log(matchMarkers);
       console.log(matchKeys);
-      console.log(valuesForObject);
       console.log(result);
 
 
