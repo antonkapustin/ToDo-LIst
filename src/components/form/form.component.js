@@ -58,8 +58,10 @@ export const addNoteComponent = {
 
     populateNotesFromArray: function (data) {
         const taskSlider = document.querySelector("[data-dom=task-place]");
+        let task = document.createElement("label");
+        task.classList.add("note")
 
-        let array = data.map(element => {renderToDom(element , 
+        let array = data.map(element => { return renderToDom(element , 
             `<label class="note">
                 <span class="icon icon_note">
                     <i class="fas fa-{{icon}}"></i>
@@ -72,7 +74,7 @@ export const addNoteComponent = {
                 <input type="checkbox" class="note__checkbox">
                 <span class="icon icon_note"><i class="fas fa-check-circle"></i></span>
             </label>`)});
-            console.log(array);
+            taskSlider.innerHTML = array;
       },
 
     applyEventHandlers: function() {
@@ -80,6 +82,17 @@ export const addNoteComponent = {
     },
 
     addSliderItems: function(data){
+
+        let array = data.map(element => { return  renderToDom(element, 
+                    `<div class="slider__item">
+                        <label class="label">
+                            <input type="radio" class="radio" name="radio"  value="{{icon}}" data-dom="radio">
+                            <span class="icon icon_slider"><i class="fas fa-{{icon}}"></i></span>
+                            <p class="slider__text">{{name}}</p>
+                        </label>
+                    </div>`)})
+
+                    this.slider.innerHTML = array;
 
         // this.slider.appendChild(data.forEach(element => {
         //     renderToDom(element, 
