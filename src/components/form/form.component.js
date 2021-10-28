@@ -59,19 +59,20 @@ export const addNoteComponent = {
     populateNotesFromArray: function (data) {
         const taskSlider = document.querySelector("[data-dom=task-place]");
 
-        // taskSlider.appendChild( renderToDom(data , 
-        //     `<label class="note">
-        //         <span class="icon icon_note">
-        //             <i class="fas fa-data.icon"></i>
-        //         </span>
-        //         <div class="note__content">
-        //             <p class="note__name">data.name</p>
-        //             <p class="note__discription">data.about</p>
-        //         </div>
-    
-        //         <input type="checkbox" class="note__checkbox">
-        //         <span class="icon icon_note"><i class="fas fa-check-circle"></i></span>
-        //     </label>`));
+        let array = data.map(element => {renderToDom(element , 
+            `<label class="note">
+                <span class="icon icon_note">
+                    <i class="fas fa-{{icon}}"></i>
+                </span>
+                <div class="note__content">
+                    <p class="note__name">{{name}}</p>
+                    <p class="note__discription">{{about}}</p>
+                </div>
+
+                <input type="checkbox" class="note__checkbox">
+                <span class="icon icon_note"><i class="fas fa-check-circle"></i></span>
+            </label>`)});
+            console.log(array);
       },
 
     applyEventHandlers: function() {
@@ -79,25 +80,16 @@ export const addNoteComponent = {
     },
 
     addSliderItems: function(data){
-        // let newSliderItem = document.createElement("div");
-    
-        // let sliderItem = ` 
-        // <label class="label">
-        //     <input type="radio" class="radio" name="radio"  value="${data.icon}" ${data.checked || " "} data-dom="radio">
-        //     <span class="icon icon_slider"><i class="fas fa-${data.icon}"></i></span>
-        //     <p class="slider__text">${data.name}</p>
-        // </label>`;
 
-        // newSliderItem.classList.add("slider__item");
-        // newSliderItem.innerHTML = sliderItem;
-
-        // this.slider.appendChild(renderToTheDom(data, 
-        //     `<div class="slider__item">
-        //         <label class="label">
-        //             <input type="radio" class="radio" name="radio"  value="data.icon" data-dom="radio">
-        //             <span class="icon icon_slider"><i class="fas fa-data.icon "></i></span>
-        //             <p class="slider__text">data.name</p>
-        //         </label>
-        //     </div>`));
+        // this.slider.appendChild(data.forEach(element => {
+        //     renderToDom(element, 
+        //         `<div class="slider__item">
+        //             <label class="label">
+        //                 <input type="radio" class="radio" name="radio"  value="{{icon}}" data-dom="radio">
+        //                 <span class="icon icon_slider"><i class="fas fa-{{icon}}"></i></span>
+        //                 <p class="slider__text">{{name}}</p>
+        //             </label>
+        //         </div>`);
+        // }));
     }
 }
