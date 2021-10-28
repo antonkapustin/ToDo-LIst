@@ -1,13 +1,4 @@
-    // template example
-    // '<div class="title">{{name}}{{title}}</div>'
-
-    // 1. get all uniqe KEYS from template
-    // 2. parse temaplte with replacing values from dataArray[i] by KEYS
-    // 3. return fragment
-
-    // your code should goes here
-
-   export const renderToDom = (data, template) => {
+export const renderToDom = (data, template) => {
 
       let matchMarkers = template.match(/{{\w.+?}}/gi);
 
@@ -19,26 +10,17 @@
 
       })
 
-      console.log(keys);
       let result = template;
 
       matchMarkers.forEach((element, i) => {
-        // TODO: increase method to have possebility replace situtations like:
-        // {{parents[0]}}
-        // {{address.town}}
-        // {{notes[0].text}}
+        let value = keys[i].reduce((sum, curr)=>{
+          return sum[curr];
+        },data);
 
-        result = result.replace(element, data[matchKeys[i]]);
-
+        result = result.replace(element, value);
       });
 
-
-      // NOTE: make sure that lengths of `matchMarkers` and `matchKeys` are equals
-      console.log(matchMarkers);
-      console.log(matchKeys);
-      console.log(result);
-
-
+      console.log(result)
       return result;
     };
 
@@ -77,20 +59,3 @@
         <p class="text">Should not be escaped {{}} {{ }} {{  }}
       </div>`
     );
-    
-    // You should get this result in the end.
-    // lengths of matches array is 10
-    /*
-    `<div class="user">
-        <p class="name">Alex <alex.green@mail.com></p>
-        <p class="username">Alex Green is 14 years old.</p>
-        <p class="phone">Phone: +123-456-789</p>
-        <p class="parents">Parents: John Smith</p>
-        <p class="address">Address: Grodno</p>
-        <p class="notes">Notes:</p>
-        <p class="notes">- unemployed since 2020</p>
-        <p class="notes">- got married in 2019</p>
-    
-        <p class="text">Should not be escaped {{}} {{ }} {{  }}
-      </div>`;
-    */
